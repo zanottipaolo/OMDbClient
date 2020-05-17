@@ -11,14 +11,16 @@ using System.Windows.Forms;
 using OMDbSearch.Models;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using static OMDbSearch.Search_Movie;
 
 namespace OMDbSearch
 {
     public partial class Form1 : Form
     {
-        //public int PageNumber { set; get; }
+        private int PageNumber { set; get; }
+        private string FilmName { set; get; }
 
-        public static List<Search> list_film = new List<Search>();
+        private List<Search> list_film = new List<Search>();
 
         public Form1()
         {
@@ -32,34 +34,24 @@ namespace OMDbSearch
 
         /// <summary>
         ///  Quando si è posizionati all'interno della textBox_search è possibile fare una ricerca 
-        ///  premendo il tasto 'Invio' sulla tastiera per simulare il click sul button_search
+        ///  premendo il tasto 'Invio' oppure cambiare pagina con i tasti freccia sx - freccia dx
         /// </summary>
         private void textBox_search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 button_search_Click(this, new EventArgs());
+            if (e.KeyCode == Keys.Left)
+                button_pagina_prima_Click(this, new EventArgs());
+            if (e.KeyCode == Keys.Right)
+                button_pagina_dopo_Click(this, new EventArgs());
         }
 
         /// <summary>
-        /// Chiama il metodo Search_Movie.consumeWebService() e 
+        /// Chiama il metodo Search_Movie.ConsumeWebService() e 
         /// associa alle PictureBox e alle Label i risultati trovati
         /// </summary>
-        private void button_search_Click(object sender, EventArgs e)
+        private async void button_search_Click(object sender, EventArgs e)
         {
-            string filmName = "";
-            int PageNumber = 1;
-            
-
-            Regex reg = new Regex("^[a-zA-Z0-9]");
-
-            bool checkName = reg.IsMatch(textBox_search.Text);
-            
-            if (filmName != textBox_search.Text)
-            {
-                PageNumber = 1;
-                filmName = textBox_search.Text;
-            }
-
             #region
             PictureBox[] pic = {
                   pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10
@@ -69,84 +61,57 @@ namespace OMDbSearch
                   label_film1, label_film2, label_film3, label_film4, label_film5, label_film6, label_film7, label_film8, label_film9, label_film10
               };
             #endregion
+
+            // se una ricerca produce meno di 10 risultati nelle picturebox e nelle label che avanzano
+            // rimangono ancora i dati della ricerca precedente, modifico quindi i valori
+            for (int k = 0; k < 10; k++)
+            {
+                pic[k].Visible = false;
+                lab[k].Visible = false;
+                pic[k].ImageLocation = null;
+                lab[k].Text = "";
+            }
+
+            if (FilmName != textBox_search.Text)
+            {
+                PageNumber = 1;
+                FilmName = textBox_search.Text;
+            }
+
+            // controllo che il nome del film non inizi con un carattere speciale
+            Regex reg = new Regex("^[a-zA-Z0-9]");
+
+            bool checkName = reg.IsMatch(textBox_search.Text);
             
             if (textBox_search.Text != "" && checkName)
             {
-                //Search_Movie.consumeWebService(filmName, PageNumber, list_film);
-                Search_Movie _Movie = new Search_Movie();
+                list_film = await ConsumeWebService(FilmName, PageNumber);
 
-                _Movie.consumeWebService(filmName, PageNumber, list_film);
-
-                /*string query = "https://www.omdbapi.com/?s=" + filmName + "&page=" + PageNumber.ToString() + "&apikey=771ba633";
-                int totalResults;
-
-                using (var client = new HttpClient())
+                if (Response)
                 {
-                    string risp_JSON = await client.GetStringAsync(query);
-
-                    Rootobject film_des = JsonConvert.DeserializeObject<Rootobject>(risp_JSON);
-
-                    list_film.Clear();
-
-                    if (film_des.Response == "True")
+                    for (int j = 0; j < list_film.Count(); j++)
                     {
-                        Total = film_des.totalResults;
-                        Response = "True";
-
-                        for (int k = 0; k < 10; k++)
-                        {
-                            Search movie = new Search
-                            {
-                                Title = film_des.Search[k].Title,
-                                Poster = film_des.Search[k].Poster,
-                            };
-
-                            list_film.Add(movie);
-                        }
-                    }
-                    else
-                    {
-                        Response = "False";
-                    }
-                }*/
-
-                //if (Search_Movie.Response == "True")
-                //{
-                /*for (int i = 0; i < 10; i++)
-                {
-                    pic[i].Visible = true;
-                    //pic[i].ImageLocation = "";
-                    lab[i].Visible = true;
-                    //lab[i].Text = "Harry Potter and the Deathly Allows";
-
-                    foreach (Search film in list_film)
-                    {
-                        pic[i].ImageLocation = film.Poster;
-                        lab[i].Text = film.Title;
-                    }
-                }*/
-
-                for (int j=0; j<10; j++)
-                    {
-                    pic[j].Visible = true;
-                    lab[j].Visible = true;
+                        pic[j].Visible = true;
+                        lab[j].Visible = true;
                     }
 
                     int i = 0;
-                    foreach(Search film in list_film)
+                    foreach (Search film in list_film)
                     {
-                        //pic[i].Visible = true;
                         pic[i].ImageLocation = film.Poster;
-                        //lab[i].Visible = true;
                         lab[i].Text = film.Title;
                         i++;
                     }
 
                     label_pageNumber.Text = PageNumber.ToString();
                     label_pageNumber.Visible = true;
-                //}
-               //else
-                  //  MessageBox.Show("Film non trovato", "Ci dispiace...", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    label_pageNumber.Visible = false;
+                    MessageBox.Show("Film non trovato", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_search.Clear();
+                }
             }
             else 
             {
@@ -165,30 +130,48 @@ namespace OMDbSearch
 
         }
 
+        /// <summary>
+        /// Aumenta il numero di pagina e richiama il metodo 'button_search_Click'
+        /// </summary>
         private void button_pagina_dopo_Click(object sender, EventArgs e)
         {
-            /*if(PageNumber < Search_Movie.Total / 10)
+            if (PageNumber < Total / 10)
             {
                 PageNumber++;
                 button_search_Click(this, new EventArgs());
-            }*/
+            }
+            else
+                MessageBox.Show("Impossibile andare avanti", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        /// <summary>
+        /// Diminuisce il numero di pagina e richiama il metodo 'button_search_Click'
+        /// </summary>
         private void button_pagina_prima_Click(object sender, EventArgs e)
         {
-            /*if (PageNumber > 1)
+            if (PageNumber > 1)
             {
                 PageNumber--;
 
                 button_search_Click(this, new EventArgs());
             }
             else
-                MessageBox.Show("Impossibile tornare indietro", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);*/
+                MessageBox.Show("Impossibile tornare indietro", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void label_pageNumber_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label_film4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }

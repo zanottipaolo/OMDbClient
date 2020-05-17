@@ -162,9 +162,9 @@
             // 
             this.label_film10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film10.Location = new System.Drawing.Point(767, 360);
+            this.label_film10.Location = new System.Drawing.Point(758, 360);
             this.label_film10.Name = "label_film10";
-            this.label_film10.Size = new System.Drawing.Size(123, 29);
+            this.label_film10.Size = new System.Drawing.Size(142, 29);
             this.label_film10.TabIndex = 28;
             this.label_film10.Text = "label_film10";
             this.label_film10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -185,9 +185,9 @@
             // 
             this.label_film5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film5.Location = new System.Drawing.Point(764, 168);
+            this.label_film5.Location = new System.Drawing.Point(755, 168);
             this.label_film5.Name = "label_film5";
-            this.label_film5.Size = new System.Drawing.Size(126, 37);
+            this.label_film5.Size = new System.Drawing.Size(145, 37);
             this.label_film5.TabIndex = 26;
             this.label_film5.Text = "label_film5";
             this.label_film5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -208,9 +208,9 @@
             // 
             this.label_film9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film9.Location = new System.Drawing.Point(581, 360);
+            this.label_film9.Location = new System.Drawing.Point(578, 360);
             this.label_film9.Name = "label_film9";
-            this.label_film9.Size = new System.Drawing.Size(131, 29);
+            this.label_film9.Size = new System.Drawing.Size(147, 29);
             this.label_film9.TabIndex = 24;
             this.label_film9.Text = "label_film9";
             this.label_film9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -231,13 +231,14 @@
             // 
             this.label_film4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film4.Location = new System.Drawing.Point(578, 168);
+            this.label_film4.Location = new System.Drawing.Point(575, 168);
             this.label_film4.Name = "label_film4";
-            this.label_film4.Size = new System.Drawing.Size(134, 37);
+            this.label_film4.Size = new System.Drawing.Size(150, 37);
             this.label_film4.TabIndex = 22;
             this.label_film4.Text = "label_film4";
             this.label_film4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film4.Visible = false;
+            this.label_film4.Click += new System.EventHandler(this.label_film4_Click);
             // 
             // pictureBox7
             // 
@@ -254,9 +255,9 @@
             // 
             this.label_film8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film8.Location = new System.Drawing.Point(400, 360);
+            this.label_film8.Location = new System.Drawing.Point(394, 360);
             this.label_film8.Name = "label_film8";
-            this.label_film8.Size = new System.Drawing.Size(128, 29);
+            this.label_film8.Size = new System.Drawing.Size(143, 29);
             this.label_film8.TabIndex = 20;
             this.label_film8.Text = "label_film8";
             this.label_film8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -277,9 +278,9 @@
             // 
             this.label_film3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film3.Location = new System.Drawing.Point(397, 168);
+            this.label_film3.Location = new System.Drawing.Point(391, 168);
             this.label_film3.Name = "label_film3";
-            this.label_film3.Size = new System.Drawing.Size(131, 37);
+            this.label_film3.Size = new System.Drawing.Size(146, 37);
             this.label_film3.TabIndex = 18;
             this.label_film3.Text = "label_film3";
             this.label_film3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -300,9 +301,9 @@
             // 
             this.label_film7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film7.Location = new System.Drawing.Point(208, 360);
+            this.label_film7.Location = new System.Drawing.Point(205, 360);
             this.label_film7.Name = "label_film7";
-            this.label_film7.Size = new System.Drawing.Size(142, 29);
+            this.label_film7.Size = new System.Drawing.Size(145, 29);
             this.label_film7.TabIndex = 16;
             this.label_film7.Text = "label_film7";
             this.label_film7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -346,9 +347,9 @@
             // 
             this.label_film6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film6.Location = new System.Drawing.Point(28, 360);
+            this.label_film6.Location = new System.Drawing.Point(18, 360);
             this.label_film6.Name = "label_film6";
-            this.label_film6.Size = new System.Drawing.Size(128, 29);
+            this.label_film6.Size = new System.Drawing.Size(153, 29);
             this.label_film6.TabIndex = 12;
             this.label_film6.Text = "label_film6";
             this.label_film6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -369,9 +370,9 @@
             // 
             this.label_film1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_film1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film1.Location = new System.Drawing.Point(25, 168);
+            this.label_film1.Location = new System.Drawing.Point(15, 168);
             this.label_film1.Name = "label_film1";
-            this.label_film1.Size = new System.Drawing.Size(131, 37);
+            this.label_film1.Size = new System.Drawing.Size(156, 37);
             this.label_film1.TabIndex = 10;
             this.label_film1.Text = "label_film1";
             this.label_film1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -427,6 +428,7 @@
             this.Name = "Form1";
             this.Text = "OMDbSearch";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel_control.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
