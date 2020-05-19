@@ -169,6 +169,7 @@
             this.label_film10.Text = "label_film10";
             this.label_film10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film10.Visible = false;
+            this.label_film10.Click += new System.EventHandler(this.label_film10_Click);
             // 
             // pictureBox10
             // 
@@ -180,6 +181,7 @@
             this.pictureBox10.TabIndex = 27;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Visible = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // label_film5
             // 
@@ -192,6 +194,7 @@
             this.label_film5.Text = "label_film5";
             this.label_film5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film5.Visible = false;
+            this.label_film5.Click += new System.EventHandler(this.label_film5_Click);
             // 
             // pictureBox9
             // 
@@ -203,6 +206,7 @@
             this.pictureBox9.TabIndex = 25;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Visible = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // label_film9
             // 
@@ -215,6 +219,7 @@
             this.label_film9.Text = "label_film9";
             this.label_film9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film9.Visible = false;
+            this.label_film9.Click += new System.EventHandler(this.label_film9_Click);
             // 
             // pictureBox8
             // 
@@ -226,6 +231,7 @@
             this.pictureBox8.TabIndex = 23;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Visible = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // label_film4
             // 
@@ -250,6 +256,7 @@
             this.pictureBox7.TabIndex = 21;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Visible = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // label_film8
             // 
@@ -262,6 +269,7 @@
             this.label_film8.Text = "label_film8";
             this.label_film8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film8.Visible = false;
+            this.label_film8.Click += new System.EventHandler(this.label_film8_Click);
             // 
             // pictureBox6
             // 
@@ -273,6 +281,7 @@
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Visible = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // label_film3
             // 
@@ -285,6 +294,7 @@
             this.label_film3.Text = "label_film3";
             this.label_film3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film3.Visible = false;
+            this.label_film3.Click += new System.EventHandler(this.label_film3_Click);
             // 
             // pictureBox5
             // 
@@ -296,6 +306,7 @@
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Visible = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // label_film7
             // 
@@ -308,6 +319,7 @@
             this.label_film7.Text = "label_film7";
             this.label_film7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film7.Visible = false;
+            this.label_film7.Click += new System.EventHandler(this.label_film7_Click);
             // 
             // pictureBox4
             // 
@@ -319,6 +331,7 @@
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Visible = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label_film2
             // 
@@ -331,6 +344,7 @@
             this.label_film2.Text = "label_film2";
             this.label_film2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film2.Visible = false;
+            this.label_film2.Click += new System.EventHandler(this.label_film2_Click);
             // 
             // pictureBox3
             // 
@@ -342,6 +356,7 @@
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Visible = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label_film6
             // 
@@ -354,6 +369,7 @@
             this.label_film6.Text = "label_film6";
             this.label_film6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film6.Visible = false;
+            this.label_film6.Click += new System.EventHandler(this.label_film6_Click);
             // 
             // pictureBox2
             // 
@@ -365,6 +381,7 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label_film1
             // 
@@ -377,6 +394,7 @@
             this.label_film1.Text = "label_film1";
             this.label_film1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_film1.Visible = false;
+            this.label_film1.Click += new System.EventHandler(this.label_film1_Click);
             // 
             // pictureBox1
             // 
@@ -388,6 +406,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 

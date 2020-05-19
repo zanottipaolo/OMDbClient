@@ -72,6 +72,8 @@ namespace OMDbSearch
                 lab[k].Text = "";
             }
 
+            // se sto cercando il film imposto i valori inziali, se invece 
+            // sto cambiando pagina tengo conto dei valori precedenti
             if (FilmName != textBox_search.Text)
             {
                 PageNumber = 1;
@@ -85,7 +87,7 @@ namespace OMDbSearch
             
             if (textBox_search.Text != "" && checkName)
             {
-                list_film = await ConsumeWebService(FilmName, PageNumber);
+                list_film = await SearchList(FilmName, PageNumber);
 
                 if (Response)
                 {
@@ -166,12 +168,186 @@ namespace OMDbSearch
 
         private void label_film4_Click(object sender, EventArgs e)
         {
-
+            if (pictureBox4.ImageLocation != null && label_film4.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[3].imdbID);
+                settingsForm.Show();
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.ImageLocation != null && label_film1.Text != "") {
+                Form2 settingsForm = new Form2(list_film[0].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film1_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.ImageLocation != null && label_film1.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[0].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (pictureBox2.ImageLocation != null && label_film2.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[1].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film2_Click(object sender, EventArgs e)
+        {
+            if (pictureBox2.ImageLocation != null && label_film2.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[1].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (pictureBox3.ImageLocation != null && label_film3.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[2].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film3_Click(object sender, EventArgs e)
+        {
+            if (pictureBox3.ImageLocation != null && label_film3.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[2].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (pictureBox4.ImageLocation != null && label_film4.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[3].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (pictureBox5.ImageLocation != null && label_film5.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[4].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film5_Click(object sender, EventArgs e)
+        {
+            if (pictureBox5.ImageLocation != null && label_film5.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[4].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (pictureBox6.ImageLocation != null && label_film6.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[5].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film6_Click(object sender, EventArgs e)
+        {
+            if (pictureBox6.ImageLocation != null && label_film6.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[5].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (pictureBox7.ImageLocation != null && label_film7.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[6].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film7_Click(object sender, EventArgs e)
+        {
+            if (pictureBox7.ImageLocation != null && label_film7.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[6].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            if (pictureBox8.ImageLocation != null && label_film8.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[7].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film8_Click(object sender, EventArgs e)
+        {
+            if (pictureBox8.ImageLocation != null && label_film8.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[7].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            if (pictureBox9.ImageLocation != null && label_film9.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[8].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film9_Click(object sender, EventArgs e)
+        {
+            if (pictureBox9.ImageLocation != null && label_film9.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[8].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            if (pictureBox10.ImageLocation != null && label_film10.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[9].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film10_Click(object sender, EventArgs e)
+        {
+            if (pictureBox10.ImageLocation != null && label_film10.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[9].imdbID);
+                settingsForm.Show();
+            }
         }
     }
 }
