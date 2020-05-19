@@ -97,8 +97,6 @@ namespace OMDbSearch
 
                 if (film_des.Response == "True")
                 {
-                    Response = true;
-
                     Movie_temp.Title = film_des.Title;
                     Movie_temp.Year = film_des.Year;
                     Movie_temp.Rated = film_des.Rated;
@@ -115,17 +113,19 @@ namespace OMDbSearch
                     Movie_temp.Poster = film_des.Poster;
                     Movie_temp.imdbID = film_des.imdbID;
                     Movie_temp.BoxOffice = film_des.BoxOffice;
-                    Movie_temp.Ratings[0].Source = film_des.Ratings[0].Source;
-                    Movie_temp.Ratings[0].Value = film_des.Ratings[0].Value;
+                    
+                                            ///////
+                                            //FIX//
+                                            ///////
+                    
+                    //Movie_temp.Ratings[0].Source = film_des.Ratings[0].Source;
+                    //Movie_temp.Ratings[0].Value = film_des.Ratings[0].Value;
                     //Movie_temp.Ratings[1].Source = film_des.Ratings[1].Source;
                     //Movie_temp.Ratings[1].Value = film_des.Ratings[1].Value;
                     //Movie_temp.Ratings[2].Source = film_des.Ratings[2].Source;
                     //Movie_temp.Ratings[2].Value = film_des.Ratings[2].Value;
+
                     Movie_temp.Type = film_des.Type;
-                }
-                else
-                {
-                    Response = false;
                 }
             }
             return Movie_temp;

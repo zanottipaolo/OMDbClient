@@ -27,6 +27,25 @@ namespace OMDbSearch
         {
             Movie = await SearchFilm(imdbID);
             Text = Movie.Title;
+            pictureBox_Poster.ImageLocation = Movie.Poster;
+            label_year.Text = Movie.Year;
+            label_rated.Text = Movie.Rated;
+            label_released.Text = Movie.Released;
+            label_runtime.Text = Movie.Runtime;
+            label_genre.Text = Movie.Genre;
+            label_director.Text = Movie.Director;
+            label_writer.Text = Movie.Writer;
+            label_actors.Text = Movie.Actors;
+            label_plot.Text = Movie.Plot;
+            label_language.Text = Movie.Language;
+            label_country.Text = Movie.Country;
+            label_awards.Text = Movie.Awards;
+            label_boxoffice.Text = Movie.BoxOffice;
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
