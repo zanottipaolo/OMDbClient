@@ -174,6 +174,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox10.InitialImage = null;
             this.pictureBox10.Location = new System.Drawing.Point(778, 208);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(98, 149);
@@ -182,6 +183,8 @@
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Visible = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            this.pictureBox10.MouseEnter += new System.EventHandler(this.pictureBox10_MouseEnter);
+            this.pictureBox10.MouseLeave += new System.EventHandler(this.pictureBox10_MouseLeave);
             // 
             // label_film5
             // 
@@ -199,6 +202,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox9.InitialImage = null;
             this.pictureBox9.Location = new System.Drawing.Point(599, 208);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(98, 149);
@@ -207,6 +211,8 @@
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Visible = false;
             this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.pictureBox9.MouseEnter += new System.EventHandler(this.pictureBox9_MouseEnter);
+            this.pictureBox9.MouseLeave += new System.EventHandler(this.pictureBox9_MouseLeave);
             // 
             // label_film9
             // 
@@ -224,6 +230,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.InitialImage = null;
             this.pictureBox8.Location = new System.Drawing.Point(414, 208);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(98, 149);
@@ -232,6 +239,8 @@
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Visible = false;
             this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.pictureBox8.MouseEnter += new System.EventHandler(this.pictureBox8_MouseEnter);
+            this.pictureBox8.MouseLeave += new System.EventHandler(this.pictureBox8_MouseLeave);
             // 
             // label_film4
             // 
@@ -249,6 +258,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.InitialImage = null;
             this.pictureBox7.Location = new System.Drawing.Point(229, 208);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(98, 149);
@@ -257,6 +267,8 @@
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Visible = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.pictureBox7.MouseEnter += new System.EventHandler(this.pictureBox7_MouseEnter);
+            this.pictureBox7.MouseLeave += new System.EventHandler(this.pictureBox7_MouseLeave);
             // 
             // label_film8
             // 
@@ -274,6 +286,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.InitialImage = null;
             this.pictureBox6.Location = new System.Drawing.Point(42, 208);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(98, 149);
@@ -282,6 +295,8 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Visible = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
             // 
             // label_film3
             // 
@@ -299,6 +314,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.InitialImage = null;
             this.pictureBox5.Location = new System.Drawing.Point(778, 16);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(98, 149);
@@ -307,6 +323,8 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Visible = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             // 
             // label_film7
             // 
@@ -324,6 +342,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.InitialImage = null;
             this.pictureBox4.Location = new System.Drawing.Point(599, 16);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(98, 149);
@@ -332,6 +351,8 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Visible = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             // 
             // label_film2
             // 
@@ -349,6 +370,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.InitialImage = null;
             this.pictureBox3.Location = new System.Drawing.Point(414, 16);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(98, 149);
@@ -357,6 +379,8 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Visible = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
             // 
             // label_film6
             // 
@@ -374,6 +398,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(229, 16);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(98, 149);
@@ -382,6 +407,8 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
             // label_film1
             // 
@@ -399,6 +426,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(42, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(98, 149);
@@ -407,6 +435,8 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // groupBox1
             // 

@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using OMDbSearch.Models;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
 using static OMDbSearch.Search_Movie;
+using System.Drawing;
 
 namespace OMDbSearch
 {
@@ -348,6 +342,156 @@ namespace OMDbSearch
                 Form2 settingsForm = new Form2(list_film[9].imdbID);
                 settingsForm.Show();
             }
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox1.Location = new Point(38, 12);
+            pictureBox1.Size = size;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.ImageLocation = list_film[0].Poster;
+            Size size = new Size(98, 149);
+            pictureBox1.Location = new Point(42, 16);
+            pictureBox1.Size = size;
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox2.Location = new Point(225, 12);
+            pictureBox2.Size = size;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.ImageLocation = list_film[1].Poster;
+            Size size = new Size(98, 149);
+            pictureBox2.Location = new Point(229, 16);
+            pictureBox2.Size = size;
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox3.Location = new Point(410, 12);
+            pictureBox3.Size = size;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.ImageLocation = list_film[2].Poster;
+            Size size = new Size(98, 149);
+            pictureBox3.Location = new Point(414, 16);
+            pictureBox3.Size = size;
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox4.Location = new Point(595, 12);
+            pictureBox4.Size = size;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox4.ImageLocation = list_film[3].Poster;
+            Size size = new Size(98, 149);
+            pictureBox4.Location = new Point(599, 16);
+            pictureBox4.Size = size;
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox5.Location = new Point(774, 12);
+            pictureBox5.Size = size;
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox5.ImageLocation = list_film[4].Poster;
+            Size size = new Size(98, 149);
+            pictureBox5.Location = new Point(778, 16);
+            pictureBox5.Size = size;
+        }
+
+        private void pictureBox6_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox6.Location = new Point(38, 204);
+            pictureBox6.Size = size;
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox6.ImageLocation = list_film[5].Poster;
+            Size size = new Size(98, 149);
+            pictureBox6.Location = new Point(42, 208);
+            pictureBox6.Size = size;
+        }
+
+        private void pictureBox7_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox7.Location = new Point(225, 204);
+            pictureBox7.Size = size;
+        }
+
+        private void pictureBox7_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox7.ImageLocation = list_film[6].Poster;
+            Size size = new Size(98, 149);
+            pictureBox7.Location = new Point(229, 208);
+            pictureBox7.Size = size;
+        }
+
+        private void pictureBox8_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox8.Location = new Point(410, 204);
+            pictureBox8.Size = size;
+        }
+
+        private void pictureBox8_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox8.ImageLocation = list_film[7].Poster;
+            Size size = new Size(98, 149);
+            pictureBox8.Location = new Point(414, 208);
+            pictureBox8.Size = size;
+        }
+
+        private void pictureBox9_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox9.Location = new Point(595, 204);
+            pictureBox9.Size = size;
+        }
+
+        private void pictureBox9_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox9.ImageLocation = list_film[8].Poster;
+            Size size = new Size(98, 149);
+            pictureBox9.Location = new Point(599, 208);
+            pictureBox9.Size = size;
+        }
+
+        private void pictureBox10_MouseEnter(object sender, EventArgs e)
+        {
+            Size size = new Size(106, 157);
+            pictureBox10.Location = new Point(774, 204);
+            pictureBox10.Size = size;
+        }
+
+        private void pictureBox10_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox10.ImageLocation = list_film[9].Poster;
+            Size size = new Size(98, 149);
+            pictureBox10.Location = new Point(778, 208);
+            pictureBox10.Size = size;
         }
     }
 }
