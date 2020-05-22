@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
             this.button_pagina_prima = new System.Windows.Forms.Button();
             this.button_pagina_dopo = new System.Windows.Forms.Button();
-            this.textBox_search = new System.Windows.Forms.TextBox();
-            this.button_search = new System.Windows.Forms.Button();
             this.panel_control = new System.Windows.Forms.Panel();
             this.label_film10 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -55,8 +52,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label_film1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_pageNumber = new System.Windows.Forms.Label();
+            this.text_search = new JTextBox.JText_Box();
+            this.label_title = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button_search = new System.Windows.Forms.Button();
+            this.comboBox_search_type = new System.Windows.Forms.ComboBox();
+            this.textBox_search_year = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel_control.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -70,25 +74,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 533);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Software sviluppato da Paolo Zanotti - I.T.I.S. P.Paleocapa 2020";
-            // 
             // button_pagina_prima
             // 
-            this.button_pagina_prima.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button_pagina_prima.BackColor = System.Drawing.Color.Crimson;
             this.button_pagina_prima.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.button_pagina_prima.FlatAppearance.BorderSize = 0;
             this.button_pagina_prima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_pagina_prima.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_pagina_prima.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_pagina_prima.Location = new System.Drawing.Point(335, 481);
+            this.button_pagina_prima.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_pagina_prima.ForeColor = System.Drawing.Color.Gold;
+            this.button_pagina_prima.Location = new System.Drawing.Point(321, 499);
             this.button_pagina_prima.Name = "button_pagina_prima";
-            this.button_pagina_prima.Size = new System.Drawing.Size(55, 42);
+            this.button_pagina_prima.Size = new System.Drawing.Size(55, 45);
             this.button_pagina_prima.TabIndex = 1;
             this.button_pagina_prima.Text = "<";
             this.button_pagina_prima.UseVisualStyleBackColor = false;
@@ -96,42 +92,23 @@
             // 
             // button_pagina_dopo
             // 
-            this.button_pagina_dopo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button_pagina_dopo.BackColor = System.Drawing.Color.Crimson;
             this.button_pagina_dopo.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.button_pagina_dopo.FlatAppearance.BorderSize = 0;
             this.button_pagina_dopo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_pagina_dopo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_pagina_dopo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_pagina_dopo.Location = new System.Drawing.Point(590, 481);
+            this.button_pagina_dopo.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_pagina_dopo.ForeColor = System.Drawing.Color.Gold;
+            this.button_pagina_dopo.Location = new System.Drawing.Point(576, 499);
             this.button_pagina_dopo.Name = "button_pagina_dopo";
-            this.button_pagina_dopo.Size = new System.Drawing.Size(55, 42);
+            this.button_pagina_dopo.Size = new System.Drawing.Size(55, 45);
             this.button_pagina_dopo.TabIndex = 3;
             this.button_pagina_dopo.Text = ">";
             this.button_pagina_dopo.UseVisualStyleBackColor = false;
             this.button_pagina_dopo.Click += new System.EventHandler(this.button_pagina_dopo_Click);
             // 
-            // textBox_search
-            // 
-            this.textBox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_search.Location = new System.Drawing.Point(12, 23);
-            this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(199, 23);
-            this.textBox_search.TabIndex = 4;
-            this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
-            this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
-            // 
-            // button_search
-            // 
-            this.button_search.Location = new System.Drawing.Point(217, 23);
-            this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(75, 23);
-            this.button_search.TabIndex = 5;
-            this.button_search.Text = "Cerca";
-            this.button_search.UseVisualStyleBackColor = true;
-            this.button_search.Click += new System.EventHandler(this.button_search_Click);
-            // 
             // panel_control
             // 
-            this.panel_control.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel_control.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel_control.Controls.Add(this.label_film10);
             this.panel_control.Controls.Add(this.pictureBox10);
             this.panel_control.Controls.Add(this.label_film5);
@@ -152,19 +129,19 @@
             this.panel_control.Controls.Add(this.pictureBox2);
             this.panel_control.Controls.Add(this.label_film1);
             this.panel_control.Controls.Add(this.pictureBox1);
-            this.panel_control.Location = new System.Drawing.Point(12, 75);
+            this.panel_control.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel_control.Location = new System.Drawing.Point(14, 62);
             this.panel_control.Name = "panel_control";
-            this.panel_control.Size = new System.Drawing.Size(926, 400);
+            this.panel_control.Size = new System.Drawing.Size(926, 431);
             this.panel_control.TabIndex = 6;
-            this.panel_control.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_control_Paint);
             // 
             // label_film10
             // 
             this.label_film10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film10.Location = new System.Drawing.Point(758, 360);
+            this.label_film10.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film10.Location = new System.Drawing.Point(758, 387);
             this.label_film10.Name = "label_film10";
-            this.label_film10.Size = new System.Drawing.Size(142, 29);
+            this.label_film10.Size = new System.Drawing.Size(145, 40);
             this.label_film10.TabIndex = 28;
             this.label_film10.Text = "label_film10";
             this.label_film10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -175,9 +152,9 @@
             // 
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox10.InitialImage = null;
-            this.pictureBox10.Location = new System.Drawing.Point(778, 208);
+            this.pictureBox10.Location = new System.Drawing.Point(778, 224);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox10.Size = new System.Drawing.Size(98, 160);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 27;
             this.pictureBox10.TabStop = false;
@@ -189,10 +166,10 @@
             // label_film5
             // 
             this.label_film5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film5.Location = new System.Drawing.Point(755, 168);
+            this.label_film5.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film5.Location = new System.Drawing.Point(755, 180);
             this.label_film5.Name = "label_film5";
-            this.label_film5.Size = new System.Drawing.Size(145, 37);
+            this.label_film5.Size = new System.Drawing.Size(145, 40);
             this.label_film5.TabIndex = 26;
             this.label_film5.Text = "label_film5";
             this.label_film5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -203,9 +180,9 @@
             // 
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.InitialImage = null;
-            this.pictureBox9.Location = new System.Drawing.Point(599, 208);
+            this.pictureBox9.Location = new System.Drawing.Point(599, 224);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox9.Size = new System.Drawing.Size(98, 160);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 25;
             this.pictureBox9.TabStop = false;
@@ -217,10 +194,10 @@
             // label_film9
             // 
             this.label_film9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film9.Location = new System.Drawing.Point(578, 360);
+            this.label_film9.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film9.Location = new System.Drawing.Point(578, 387);
             this.label_film9.Name = "label_film9";
-            this.label_film9.Size = new System.Drawing.Size(147, 29);
+            this.label_film9.Size = new System.Drawing.Size(145, 40);
             this.label_film9.TabIndex = 24;
             this.label_film9.Text = "label_film9";
             this.label_film9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -231,9 +208,9 @@
             // 
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.InitialImage = null;
-            this.pictureBox8.Location = new System.Drawing.Point(414, 208);
+            this.pictureBox8.Location = new System.Drawing.Point(414, 224);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox8.Size = new System.Drawing.Size(98, 160);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 23;
             this.pictureBox8.TabStop = false;
@@ -245,10 +222,10 @@
             // label_film4
             // 
             this.label_film4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film4.Location = new System.Drawing.Point(575, 168);
+            this.label_film4.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film4.Location = new System.Drawing.Point(575, 180);
             this.label_film4.Name = "label_film4";
-            this.label_film4.Size = new System.Drawing.Size(150, 37);
+            this.label_film4.Size = new System.Drawing.Size(150, 40);
             this.label_film4.TabIndex = 22;
             this.label_film4.Text = "label_film4";
             this.label_film4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -259,9 +236,9 @@
             // 
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(229, 208);
+            this.pictureBox7.Location = new System.Drawing.Point(229, 224);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox7.Size = new System.Drawing.Size(98, 160);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 21;
             this.pictureBox7.TabStop = false;
@@ -273,10 +250,10 @@
             // label_film8
             // 
             this.label_film8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film8.Location = new System.Drawing.Point(394, 360);
+            this.label_film8.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film8.Location = new System.Drawing.Point(391, 387);
             this.label_film8.Name = "label_film8";
-            this.label_film8.Size = new System.Drawing.Size(143, 29);
+            this.label_film8.Size = new System.Drawing.Size(145, 40);
             this.label_film8.TabIndex = 20;
             this.label_film8.Text = "label_film8";
             this.label_film8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -287,9 +264,9 @@
             // 
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(42, 208);
+            this.pictureBox6.Location = new System.Drawing.Point(42, 224);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox6.Size = new System.Drawing.Size(98, 160);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
@@ -301,10 +278,10 @@
             // label_film3
             // 
             this.label_film3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film3.Location = new System.Drawing.Point(391, 168);
+            this.label_film3.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film3.Location = new System.Drawing.Point(391, 180);
             this.label_film3.Name = "label_film3";
-            this.label_film3.Size = new System.Drawing.Size(146, 37);
+            this.label_film3.Size = new System.Drawing.Size(146, 40);
             this.label_film3.TabIndex = 18;
             this.label_film3.Text = "label_film3";
             this.label_film3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -315,9 +292,9 @@
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.InitialImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(778, 16);
+            this.pictureBox5.Location = new System.Drawing.Point(778, 17);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox5.Size = new System.Drawing.Size(98, 160);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
@@ -329,10 +306,10 @@
             // label_film7
             // 
             this.label_film7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film7.Location = new System.Drawing.Point(205, 360);
+            this.label_film7.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film7.Location = new System.Drawing.Point(205, 387);
             this.label_film7.Name = "label_film7";
-            this.label_film7.Size = new System.Drawing.Size(145, 29);
+            this.label_film7.Size = new System.Drawing.Size(145, 40);
             this.label_film7.TabIndex = 16;
             this.label_film7.Text = "label_film7";
             this.label_film7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -343,9 +320,9 @@
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(599, 16);
+            this.pictureBox4.Location = new System.Drawing.Point(599, 17);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox4.Size = new System.Drawing.Size(98, 160);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -357,10 +334,10 @@
             // label_film2
             // 
             this.label_film2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film2.Location = new System.Drawing.Point(205, 168);
+            this.label_film2.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film2.Location = new System.Drawing.Point(205, 180);
             this.label_film2.Name = "label_film2";
-            this.label_film2.Size = new System.Drawing.Size(145, 37);
+            this.label_film2.Size = new System.Drawing.Size(145, 40);
             this.label_film2.TabIndex = 14;
             this.label_film2.Text = "label_film2";
             this.label_film2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -371,9 +348,9 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(414, 16);
+            this.pictureBox3.Location = new System.Drawing.Point(414, 17);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox3.Size = new System.Drawing.Size(98, 160);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -385,10 +362,10 @@
             // label_film6
             // 
             this.label_film6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film6.Location = new System.Drawing.Point(18, 360);
+            this.label_film6.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film6.Location = new System.Drawing.Point(18, 387);
             this.label_film6.Name = "label_film6";
-            this.label_film6.Size = new System.Drawing.Size(153, 29);
+            this.label_film6.Size = new System.Drawing.Size(145, 40);
             this.label_film6.TabIndex = 12;
             this.label_film6.Text = "label_film6";
             this.label_film6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -399,9 +376,9 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(229, 16);
+            this.pictureBox2.Location = new System.Drawing.Point(229, 17);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox2.Size = new System.Drawing.Size(98, 160);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -413,10 +390,10 @@
             // label_film1
             // 
             this.label_film1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_film1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_film1.Location = new System.Drawing.Point(15, 168);
+            this.label_film1.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_film1.Location = new System.Drawing.Point(15, 180);
             this.label_film1.Name = "label_film1";
-            this.label_film1.Size = new System.Drawing.Size(156, 37);
+            this.label_film1.Size = new System.Drawing.Size(156, 40);
             this.label_film1.TabIndex = 10;
             this.label_film1.Text = "label_film1";
             this.label_film1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -427,9 +404,9 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(98, 149);
+            this.pictureBox1.Size = new System.Drawing.Size(98, 160);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -438,46 +415,158 @@
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(358, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(580, 56);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtri";
-            // 
             // label_pageNumber
             // 
-            this.label_pageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_pageNumber.Location = new System.Drawing.Point(440, 488);
+            this.label_pageNumber.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pageNumber.ForeColor = System.Drawing.Color.Gold;
+            this.label_pageNumber.Location = new System.Drawing.Point(426, 505);
             this.label_pageNumber.Name = "label_pageNumber";
-            this.label_pageNumber.Size = new System.Drawing.Size(100, 31);
+            this.label_pageNumber.Size = new System.Drawing.Size(100, 33);
             this.label_pageNumber.TabIndex = 29;
             this.label_pageNumber.Text = "pages";
             this.label_pageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_pageNumber.Visible = false;
-            this.label_pageNumber.Click += new System.EventHandler(this.label_pageNumber_Click);
+            // 
+            // text_search
+            // 
+            this.text_search.BackColor = System.Drawing.Color.Crimson;
+            this.text_search.BorderColor = System.Drawing.Color.Black;
+            this.text_search.BorderThickness = 1;
+            this.text_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.text_search.Font = new System.Drawing.Font("Yu Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_search.FontStyles = new System.Drawing.Font("Yu Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_search.ForeColor = System.Drawing.Color.Black;
+            this.text_search.Location = new System.Drawing.Point(14, 14);
+            this.text_search.Margin = new System.Windows.Forms.Padding(5);
+            this.text_search.MaxLength = 32767;
+            this.text_search.Name = "text_search";
+            this.text_search.onFocusBorderColor = System.Drawing.Color.SteelBlue;
+            this.text_search.PasswordChar = '\0';
+            this.text_search.RoundedBorder = 13;
+            this.text_search.Size = new System.Drawing.Size(185, 40);
+            this.text_search.TabIndex = 30;
+            this.text_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.text_search.TextColor = System.Drawing.Color.Black;
+            this.text_search.TextInput = "";
+            this.text_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_search_KeyDown);
+            // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("Yu Gothic", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_title.ForeColor = System.Drawing.Color.Gold;
+            this.label_title.Location = new System.Drawing.Point(342, 11);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(271, 43);
+            this.label_title.TabIndex = 31;
+            this.label_title.Text = "OMDB SEARCH";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::OMDbSearch.Properties.Resources.remove;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(163, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 16);
+            this.button1.TabIndex = 32;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button_search
+            // 
+            this.button_search.BackgroundImage = global::OMDbSearch.Properties.Resources.search;
+            this.button_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_search.FlatAppearance.BorderSize = 0;
+            this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_search.Location = new System.Drawing.Point(207, 27);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(22, 16);
+            this.button_search.TabIndex = 5;
+            this.button_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
+            // comboBox_search_type
+            // 
+            this.comboBox_search_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_search_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_search_type.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_search_type.FormattingEnabled = true;
+            this.comboBox_search_type.Items.AddRange(new object[] {
+            "Movie",
+            "Series",
+            "Episode",
+            "Game"});
+            this.comboBox_search_type.Location = new System.Drawing.Point(715, 27);
+            this.comboBox_search_type.MaxLength = 32767;
+            this.comboBox_search_type.Name = "comboBox_search_type";
+            this.comboBox_search_type.Size = new System.Drawing.Size(121, 29);
+            this.comboBox_search_type.TabIndex = 0;
+            this.comboBox_search_type.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox_search_type_KeyDown);
+            // 
+            // textBox_search_year
+            // 
+            this.textBox_search_year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_search_year.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox_search_year.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_search_year.Location = new System.Drawing.Point(849, 27);
+            this.textBox_search_year.MaxLength = 4;
+            this.textBox_search_year.Multiline = true;
+            this.textBox_search_year.Name = "textBox_search_year";
+            this.textBox_search_year.Size = new System.Drawing.Size(87, 29);
+            this.textBox_search_year.TabIndex = 1;
+            this.textBox_search_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_search_year.TextChanged += new System.EventHandler(this.textBox_search_year_TextChanged);
+            this.textBox_search_year.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_year_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(712, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(846, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Year";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(950, 555);
+            this.BackColor = System.Drawing.Color.Crimson;
+            this.ClientSize = new System.Drawing.Size(950, 551);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_title);
+            this.Controls.Add(this.textBox_search_year);
+            this.Controls.Add(this.comboBox_search_type);
+            this.Controls.Add(this.text_search);
             this.Controls.Add(this.label_pageNumber);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel_control);
             this.Controls.Add(this.button_search);
-            this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.button_pagina_dopo);
             this.Controls.Add(this.button_pagina_prima);
-            this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "OMDbSearch";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel_control.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -495,15 +584,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_pagina_prima;
         private System.Windows.Forms.Button button_pagina_dopo;
-        private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Button button_search;
         private System.Windows.Forms.Panel panel_control;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label_film1;
         private System.Windows.Forms.Label label_film6;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -524,6 +609,13 @@
         private System.Windows.Forms.Label label_film2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label_pageNumber;
+        private JTextBox.JText_Box text_search;
+        private System.Windows.Forms.Label label_title;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox_search_type;
+        private System.Windows.Forms.TextBox textBox_search_year;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

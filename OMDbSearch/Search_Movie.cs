@@ -31,13 +31,24 @@ namespace OMDbSearch
         /// </summary>
         /// <param name="FilmName">Contenuto della textBox_search</param>
         /// <param name="PageNumber">Numero di pagina iniziale da visualizzare</param>
-        public static async Task<List<Search>> SearchList(string FilmName, int PageNumber) 
+        /// <param name="Type">Tipo (Movie, Series, Episode, Game)</param>
+        /// <param name="Year">Anno di uscita</param>
+        public static async Task<List<Search>> SearchList(string FilmName, int PageNumber, string Type, int Year) 
         {
             List<Search> temp_list = new List<Search>();
 
             MaxFilmPage = 10;
 
-            string query = "https://www.omdbapi.com/?s=" + FilmName + "&page=" + PageNumber.ToString() + "&apikey=771ba633";
+            string query = "";
+
+            if(Type == "" && Year == 0)
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&page=" + PageNumber + "&apikey=771ba633";
+            else if(Type != "" && Year == 0)
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&type=" + Type + "&page=" + PageNumber + "&apikey=771ba633";
+            else if(Year != 0 && Type == "")
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&y=" + Year + "&page=" + PageNumber + "&apikey=771ba633";
+            else if (Year != 0 && Type != "")
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&y=" + Year + "&type=" + Type + "&page=" + PageNumber + "&apikey=771ba633";
 
             using (var client = new HttpClient())
             {
@@ -113,19 +124,8 @@ namespace OMDbSearch
                     Movie_temp.Poster = film_des.Poster;
                     Movie_temp.imdbID = film_des.imdbID;
                     Movie_temp.BoxOffice = film_des.BoxOffice;
-                    
-                                            ///////
-                                            //FIX//
-                                            ///////
-                    
-                    //Movie_temp.Ratings[0].Source = film_des.Ratings[0].Source;
-                    //Movie_temp.Ratings[0].Value = film_des.Ratings[0].Value;
-                    //Movie_temp.Ratings[1].Source = film_des.Ratings[1].Source;
-                    //Movie_temp.Ratings[1].Value = film_des.Ratings[1].Value;
-                    //Movie_temp.Ratings[2].Source = film_des.Ratings[2].Source;
-                    //Movie_temp.Ratings[2].Value = film_des.Ratings[2].Value;
-
                     Movie_temp.Type = film_des.Type;
+                    Movie_temp.imdbRating = film_des.imdbRating;
                 }
             }
             return Movie_temp;
