@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -21,7 +20,7 @@ namespace OMDbSearch
 
         /// <summary>
         /// Risposta della ricerca: 'true' se sono stati trovati dei risultati,
-        /// 'false' se è stato trovato un errore
+        /// 'false' no
         /// </summary>
         public static bool Response { set; get; }
 
@@ -31,7 +30,7 @@ namespace OMDbSearch
         /// </summary>
         /// <param name="FilmName">Contenuto della textBox_search</param>
         /// <param name="PageNumber">Numero di pagina iniziale da visualizzare</param>
-        /// <param name="Type">Tipo (Movie, Series, Episode, Game)</param>
+        /// <param name="Type">Tipo (Movie, Series, Episode e Game)</param>
         /// <param name="Year">Anno di uscita</param>
         public static async Task<List<Search>> SearchList(string FilmName, int PageNumber, string Type, int Year) 
         {

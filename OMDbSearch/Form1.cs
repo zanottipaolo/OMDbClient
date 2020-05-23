@@ -11,11 +11,29 @@ namespace OMDbSearch
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Numero di pagina da visualizzare
+        /// </summary>
         private int PageNumber { set; get; }
+
+        /// <summary>
+        /// Titolo del film da cercare
+        /// </summary>
         private string FilmName { set; get; }
+
+        /// <summary>
+        /// Tipo di risorsa da cercare (Movie, Series, Episode e Game)
+        /// </summary>
         private string Type { set; get; }
+
+        /// <summary>
+        /// Anno di uscita del film che si vuole cercare
+        /// </summary>
         private int Year { set; get; }
 
+        /// <summary>
+        /// Lista contenente i film trovati
+        /// </summary>
         private List<Search> list_film = new List<Search>();
 
         public Form1()
@@ -25,23 +43,12 @@ namespace OMDbSearch
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ActiveControl = text_search;
+            ActiveControl = textBox_search;
         }
 
-        /// <summary>
-        ///  Quando si è posizionati all'interno della textBox_search, comboBox_search_type e 
-        ///  textBox_search_year è possibile fare una ricerca premendo il tasto 'Invio' oppure 
-        ///  cambiare pagina con i tasti freccia sx - freccia dx
-        /// </summary>
-        private void textBox_search_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                button_search_Click(this, new EventArgs());
-            if (e.KeyCode == Keys.Left)
-                button_pagina_prima_Click(this, new EventArgs());
-            if (e.KeyCode == Keys.Right)
-                button_pagina_dopo_Click(this, new EventArgs());
-        }
+        //  Quando si è posizionati all'interno della textBox_search, comboBox_search_type e 
+        //  textBox_search_year è possibile fare una ricerca premendo il tasto 'Invio' oppure 
+        //  cambiare pagina con i tasti freccia sx - freccia dx
         private void text_search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -67,6 +74,8 @@ namespace OMDbSearch
                 button_pagina_dopo_Click(this, new EventArgs());
         }
 
+        // uso una espressione regolare per controllare l'input della 
+        // textBox_search_year (devono essere solo numeri interi)
         private void textBox_search_year_TextChanged(object sender, EventArgs e)
         {
             Regex reg = new Regex("^[0-9]");
@@ -92,8 +101,8 @@ namespace OMDbSearch
               };
             #endregion
 
-            // se una ricerca produce meno di 10 risultati nelle picturebox e nelle label che avanzano
-            // rimangono ancora i dati della ricerca precedente, modifico quindi i valori
+            // se una ricerca produce meno di 10 risultati, nelle picturebox e nelle label che avanzano,
+            // rimangono ancora i dati della ricerca precedente, modifico quindi quei valori
             for (int k = 0; k < 10; k++)
             {
                 pic[k].Visible = false;
@@ -103,11 +112,11 @@ namespace OMDbSearch
             }
 
             // se sto cercando il film imposto i valori inziali, se invece 
-            // sto cambiando pagina tengo conto dei valori precedenti
-            if (FilmName != text_search.TextInput)
+            // sto cambiando pagina tengo conto di quelli precedenti
+            if (FilmName != textBox_search.TextInput)
             {
                 PageNumber = 1;
-                FilmName = text_search.TextInput;
+                FilmName = textBox_search.TextInput;
             }
             
             Year = 0;
@@ -119,9 +128,9 @@ namespace OMDbSearch
             // controllo che il nome del film non inizi con un carattere speciale
             Regex reg = new Regex("^[a-zA-Z0-9]");
 
-            bool checkName = reg.IsMatch(text_search.TextInput);
+            bool checkName = reg.IsMatch(textBox_search.TextInput);
             
-            if (text_search.TextInput != "" && checkName)
+            if (textBox_search.TextInput != "" && checkName)
             {
                 list_film = await SearchList(FilmName, PageNumber, Type, Year);
 
@@ -148,7 +157,7 @@ namespace OMDbSearch
                 {
                     label_pageNumber.Visible = false;
                     MessageBox.Show("Movie not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    text_search.TextInput = "";
+                    textBox_search.TextInput = "";
                     comboBox_search_type.Text = null;
                     textBox_search_year.Text = "";
                 }
@@ -156,7 +165,7 @@ namespace OMDbSearch
             else 
             {
                 MessageBox.Show("Name of the movie not valid", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                text_search.TextInput = "";
+                textBox_search.TextInput = "";
             }
         }
 
@@ -189,14 +198,8 @@ namespace OMDbSearch
                 MessageBox.Show("You can't go back", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void label_film4_Click(object sender, EventArgs e)
-        {
-            if (pictureBox4.ImageLocation != null && label_film4.Text != "")
-            {
-                Form2 settingsForm = new Form2(list_film[3].imdbID);
-                settingsForm.Show();
-            }
-        }
+        // quando clicco sulla pictureBox o sulla label creo una nuova form
+        // a cui passo l'imdbID del film
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -252,6 +255,15 @@ namespace OMDbSearch
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (pictureBox4.ImageLocation != null && label_film4.Text != "")
+            {
+                Form2 settingsForm = new Form2(list_film[3].imdbID);
+                settingsForm.Show();
+            }
+        }
+
+        private void label_film4_Click(object sender, EventArgs e)
         {
             if (pictureBox4.ImageLocation != null && label_film4.Text != "")
             {
@@ -368,6 +380,8 @@ namespace OMDbSearch
             }
         }
 
+        // quando il mouse passa sopra la pictureBox l'immagine aumenta la sua dimensione
+        // e cambia le proprie coordinate, per permettere quell'effetto di 'zoom'
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             Size size = new Size(106, 168);
@@ -375,9 +389,9 @@ namespace OMDbSearch
             pictureBox1.Size = size;
         }
 
+        // quando il mouse si sposta dalla pictureBox l'immagine torna come prima
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = list_film[0].Poster;
             Size size = new Size(98, 160);
             pictureBox1.Location = new Point(42, 17);
             pictureBox1.Size = size;
@@ -392,7 +406,6 @@ namespace OMDbSearch
 
         private void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox2.ImageLocation = list_film[1].Poster;
             Size size = new Size(98, 160);
             pictureBox2.Location = new Point(229, 17);
             pictureBox2.Size = size;
@@ -407,7 +420,6 @@ namespace OMDbSearch
 
         private void pictureBox3_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox3.ImageLocation = list_film[2].Poster;
             Size size = new Size(98, 160);
             pictureBox3.Location = new Point(414, 17);
             pictureBox3.Size = size;
@@ -422,7 +434,6 @@ namespace OMDbSearch
 
         private void pictureBox4_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox4.ImageLocation = list_film[3].Poster;
             Size size = new Size(98, 160);
             pictureBox4.Location = new Point(599, 17);
             pictureBox4.Size = size;
@@ -437,7 +448,6 @@ namespace OMDbSearch
 
         private void pictureBox5_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox5.ImageLocation = list_film[4].Poster;
             Size size = new Size(98, 160);
             pictureBox5.Location = new Point(778, 17);
             pictureBox5.Size = size;
@@ -452,7 +462,6 @@ namespace OMDbSearch
 
         private void pictureBox6_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox6.ImageLocation = list_film[5].Poster;
             Size size = new Size(98, 160);
             pictureBox6.Location = new Point(42, 224);
             pictureBox6.Size = size;
@@ -467,7 +476,6 @@ namespace OMDbSearch
 
         private void pictureBox7_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox7.ImageLocation = list_film[6].Poster;
             Size size = new Size(98, 160);
             pictureBox7.Location = new Point(229, 224);
             pictureBox7.Size = size;
@@ -482,7 +490,6 @@ namespace OMDbSearch
 
         private void pictureBox8_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox8.ImageLocation = list_film[7].Poster;
             Size size = new Size(98, 160);
             pictureBox8.Location = new Point(414, 224);
             pictureBox8.Size = size;
@@ -497,7 +504,6 @@ namespace OMDbSearch
 
         private void pictureBox9_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox9.ImageLocation = list_film[8].Poster;
             Size size = new Size(98, 160);
             pictureBox9.Location = new Point(599, 224);
             pictureBox9.Size = size;
@@ -512,7 +518,6 @@ namespace OMDbSearch
 
         private void pictureBox10_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox10.ImageLocation = list_film[9].Poster;
             Size size = new Size(98, 160);
             pictureBox10.Location = new Point(778, 224);
             pictureBox10.Size = size;
@@ -520,8 +525,8 @@ namespace OMDbSearch
 
         private void button1_Click(object sender, EventArgs e)
         {
-            text_search.TextInput = "";
-            text_search.Focus();
+            textBox_search.TextInput = "";
+            textBox_search.Focus();
         }
     }
 }

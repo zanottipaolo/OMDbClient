@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using OMDbSearch.Models;
 using static OMDbSearch.Search_Movie;
@@ -15,7 +9,14 @@ namespace OMDbSearch
 {
     public partial class Form2 : Form
     {
+        /// <summary>
+        /// Film selezionato
+        /// </summary>
         private Rootobject2 Movie = new Rootobject2 { };
+
+        /// <summary>
+        /// imdbID del film selezionato
+        /// </summary>
         private string imdbID { set; get; }
 
         public Form2(string Id)
@@ -24,6 +25,8 @@ namespace OMDbSearch
             imdbID = Id;
         }
 
+        // imposto i colori dei controlli e associo le informazioni
+        // del film alle label/Text/PictureBox 
         private async void Form2_Load(object sender, EventArgs e)
         {
             button_star1.ForeColor = SystemColors.Control;
@@ -49,11 +52,13 @@ namespace OMDbSearch
             label_awards.Text = Movie.Awards;
             label_boxoffice.Text = Movie.BoxOffice;
 
+            // Converto l'imdbRating in /5, poi lo arrotondo
             Decimal Star = 0;
 
             if(Movie.imdbRating != "N/A")
                 Star = Decimal.Round(5 * decimal.Parse(Movie.imdbRating, CultureInfo.InvariantCulture.NumberFormat) / 10);
 
+            // cambio il colore alle stelle in base al risultato
             if (Star >= 1)
                 button_star1.BackColor = Color.Gold;
             if (Star >= 2)
@@ -66,12 +71,15 @@ namespace OMDbSearch
                 button_star5.BackColor = Color.Gold;
         }
 
+        // quando il mouse passa sopra la stella 'n' coloro i bordi
+        // fino di tutte le stelle fino alla 'n'
         private void button_star1_MouseEnter(object sender, EventArgs e)
         {
             button_star1.FlatAppearance.BorderColor = Color.SteelBlue;
             button_star1.FlatAppearance.BorderSize = 2;
         }
 
+        // quando il mouse si sposta il bordo torna come prima
         private void button_star1_MouseLeave(object sender, EventArgs e)
         {
             button_star1.FlatAppearance.BorderColor = Color.Black;
