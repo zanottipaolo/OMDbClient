@@ -509,9 +509,6 @@
             // 
             // textBox_search_year
             // 
-            this.textBox_search_year.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_search_year.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_search_year.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_search_year.Location = new System.Drawing.Point(849, 27);
