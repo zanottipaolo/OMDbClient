@@ -42,13 +42,13 @@ namespace OMDbSearch
             string query = "";
 
             if(Type == "" && Year == 0)
-                query = "https://www.omdbapi.com/?s=" + FilmName + "&page=" + PageNumber + "&apikey=771ba633";
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&page=" + PageNumber + "&apikey=528b5586";
             else if(Type != "" && Year == 0)
-                query = "https://www.omdbapi.com/?s=" + FilmName + "&type=" + Type + "&page=" + PageNumber + "&apikey=771ba633";
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&type=" + Type + "&page=" + PageNumber + "&apikey=528b5586";
             else if(Year != 0 && Type == "")
-                query = "https://www.omdbapi.com/?s=" + FilmName + "&y=" + Year + "&page=" + PageNumber + "&apikey=771ba633";
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&y=" + Year + "&page=" + PageNumber + "&apikey=528b5586";
             else if (Year != 0 && Type != "")
-                query = "https://www.omdbapi.com/?s=" + FilmName + "&y=" + Year + "&type=" + Type + "&page=" + PageNumber + "&apikey=771ba633";
+                query = "https://www.omdbapi.com/?s=" + FilmName + "&y=" + Year + "&type=" + Type + "&page=" + PageNumber + "&apikey=528b5586";
 
             using (var client = new HttpClient())
             {
@@ -97,7 +97,7 @@ namespace OMDbSearch
         /// <param name="imdbID">imdbID del film selezionato</param>
         public static async Task<Rootobject2> SearchFilm(string imdbID)
         {
-            string query = "https://www.omdbapi.com/?i=" + imdbID + "&apikey=771ba633";
+            string query = "https://www.omdbapi.com/?i=" + imdbID + "&apikey=528b5586";
             Rootobject2 Movie_temp = new Rootobject2 { };
 
             using (var client = new HttpClient())
