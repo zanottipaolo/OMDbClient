@@ -525,7 +525,7 @@ namespace OMDbSearch
             pictureBox10.Size = size;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_delete_Click(object sender, EventArgs e)
         {
             textBox_search.TextInput = "";
             textBox_search.Focus();

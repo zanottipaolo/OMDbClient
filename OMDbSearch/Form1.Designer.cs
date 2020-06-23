@@ -538,6 +538,7 @@
             this.button_delete.TabIndex = 34;
             this.button_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // Form1
             // 
