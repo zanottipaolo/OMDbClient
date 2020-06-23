@@ -1,5 +1,11 @@
 # OMDbClient
-A simple Windows Form that let you search movies in the Open Movie Database (OMDb).
+Basic Windows Form that let you search for movies in the **Open Movie Database** ([OMDb](https://www.omdbapi.com/)).
+
+## Description
+This is a client that consumes *OMDb API* and let you:
+1. Search for a movie by its name (you can also use keyboard keys to change the page and to start the research);
+1. Read more details about a specific element, like plot, director, actors, genre, runtime, etc;
+1. Set up parameters (*type* and *year*) to get better results.
 
 ## Tools
 * JTextBox
