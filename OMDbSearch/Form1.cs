@@ -49,7 +49,8 @@ namespace OMDbSearch
         //  Quando si è posizionati all'interno della textBox_search, comboBox_search_type e 
         //  textBox_search_year è possibile fare una ricerca premendo il tasto 'Invio' oppure 
         //  cambiare pagina con i tasti freccia sx - freccia dx
-        private void text_search_KeyDown(object sender, KeyEventArgs e)
+
+        private void textBox_search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 button_search_Click(this, new EventArgs());
@@ -58,6 +59,7 @@ namespace OMDbSearch
             if (e.KeyCode == Keys.Right)
                 button_pagina_dopo_Click(this, new EventArgs());
         }
+
         private void comboBox_search_type_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

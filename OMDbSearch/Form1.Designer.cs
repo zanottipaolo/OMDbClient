@@ -53,14 +53,14 @@
             this.label_film1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_pageNumber = new System.Windows.Forms.Label();
-            this.textBox_search = new JTextBox.JText_Box();
             this.label_title = new System.Windows.Forms.Label();
-            this.button_delete = new System.Windows.Forms.Button();
             this.button_search = new System.Windows.Forms.Button();
             this.comboBox_search_type = new System.Windows.Forms.ComboBox();
             this.textBox_search_year = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox_search = new JTextBox.JText_Box();
+            this.button_delete = new System.Windows.Forms.Button();
             this.panel_control.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -427,29 +427,6 @@
             this.label_pageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_pageNumber.Visible = false;
             // 
-            // textBox_search
-            // 
-            this.textBox_search.BackColor = System.Drawing.Color.Crimson;
-            this.textBox_search.BorderColor = System.Drawing.Color.Black;
-            this.textBox_search.BorderThickness = 1;
-            this.textBox_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox_search.Font = new System.Drawing.Font("Yu Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_search.FontStyles = new System.Drawing.Font("Yu Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_search.ForeColor = System.Drawing.Color.Black;
-            this.textBox_search.Location = new System.Drawing.Point(14, 14);
-            this.textBox_search.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox_search.MaxLength = 32767;
-            this.textBox_search.Name = "textBox_search";
-            this.textBox_search.onFocusBorderColor = System.Drawing.Color.SteelBlue;
-            this.textBox_search.PasswordChar = '\0';
-            this.textBox_search.RoundedBorder = 13;
-            this.textBox_search.Size = new System.Drawing.Size(185, 40);
-            this.textBox_search.TabIndex = 30;
-            this.textBox_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBox_search.TextColor = System.Drawing.Color.Black;
-            this.textBox_search.TextInput = "";
-            this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_search_KeyDown);
-            // 
             // label_title
             // 
             this.label_title.AutoSize = true;
@@ -460,20 +437,6 @@
             this.label_title.Size = new System.Drawing.Size(271, 43);
             this.label_title.TabIndex = 31;
             this.label_title.Text = "OMDB SEARCH";
-            // 
-            // button_delete
-            // 
-            this.button_delete.BackgroundImage = global::OMDbSearch.Properties.Resources.remove;
-            this.button_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_delete.FlatAppearance.BorderSize = 0;
-            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Location = new System.Drawing.Point(163, 27);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(22, 16);
-            this.button_delete.TabIndex = 32;
-            this.button_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_delete.UseVisualStyleBackColor = true;
-            this.button_delete.Click += new System.EventHandler(this.button1_Click);
             // 
             // button_search
             // 
@@ -541,19 +504,54 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Year";
             // 
+            // textBox_search
+            // 
+            this.textBox_search.BorderColor = System.Drawing.Color.Black;
+            this.textBox_search.BorderThickness = 1;
+            this.textBox_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_search.Font = new System.Drawing.Font("Yu Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_search.FontStyles = new System.Drawing.Font("Yu Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_search.ForeColor = System.Drawing.Color.Black;
+            this.textBox_search.Location = new System.Drawing.Point(14, 16);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox_search.MaxLength = 32767;
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.onFocusBorderColor = System.Drawing.Color.SteelBlue;
+            this.textBox_search.PasswordChar = '\0';
+            this.textBox_search.RoundedBorder = 13;
+            this.textBox_search.Size = new System.Drawing.Size(185, 40);
+            this.textBox_search.TabIndex = 33;
+            this.textBox_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_search.TextColor = System.Drawing.Color.Black;
+            this.textBox_search.TextInput = "";
+            this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
+            // 
+            // button_delete
+            // 
+            this.button_delete.BackgroundImage = global::OMDbSearch.Properties.Resources.remove;
+            this.button_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_delete.FlatAppearance.BorderSize = 0;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete.Location = new System.Drawing.Point(163, 27);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(22, 16);
+            this.button_delete.TabIndex = 34;
+            this.button_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_delete.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(950, 551);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.button_delete);
+            this.Controls.Add(this.textBox_search);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.textBox_search_year);
             this.Controls.Add(this.comboBox_search_type);
-            this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.label_pageNumber);
             this.Controls.Add(this.panel_control);
             this.Controls.Add(this.button_search);
@@ -606,13 +604,13 @@
         private System.Windows.Forms.Label label_film2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label_pageNumber;
-        private JTextBox.JText_Box textBox_search;
         private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.ComboBox comboBox_search_type;
         private System.Windows.Forms.TextBox textBox_search_year;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private JTextBox.JText_Box textBox_search;
+        private System.Windows.Forms.Button button_delete;
     }
 }
 
