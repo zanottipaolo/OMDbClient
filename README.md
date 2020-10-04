@@ -7,8 +7,8 @@ This is a client that consumes *OMDb API* and let you:
 1. Read more details about a specific element like plot, director, actors, genre, runtime, etc;
 1. Set up parameters (*type* `Movie/Series/Episode/Game` and *year*) to get better results.
 
-## Tools
-* JTextBox
+## Tools required
+* [JTextBox](https://drive.google.com/drive/folders/1wPXGQ_NB0reEyY3fjIHCt6jpNcK-YVAi)
 * [Newtonsoft](https://www.newtonsoft.com/json)
 
 ## Screenshots
